@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+}
+.login-image-container{
+  width:60%;
+}
+.login-image-container img{
+  width: 90%;
+  height:100%;
+}
+.login-form {
+  margin-top:10%;
+  /* margin-right:5%; */
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  background-color: transparent;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+.login-image-container2{
+  width:95%;
+}
+.login-image-container2 img{
+  width: 100%;
+  height:100%;
+}
+.login-form2 {
+  margin-top:5%;
+  /* margin-right: 10%; */
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  background-color: transparent;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.input-field {
+  width: calc(100% - 20px); 
+  padding: 10px;
+  margin: 10px 0; 
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.login-form-container2
+{
+  /* background-color: blue; */
+  width: 80%;
+  height: 50%;
+  padding-left: 15%;
+}
+
+.login-btn {
+  background-color: rgb(31, 2, 85);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-left: 30%;
+  position: static;
+  width:40%;
+  font-size: 100%;
+}
+
+.login-btn:hover {
+  background-color: #14017c;
+}
+
+p
+{
+  margin-left: 20%;
+}
+
+
+@media screen and (max-width: 600px) {
+  .auth-form {
+    width: 90%;
+    padding: 15px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
+
+
+
+
