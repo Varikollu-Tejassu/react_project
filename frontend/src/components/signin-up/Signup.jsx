@@ -20,7 +20,7 @@ const Signup = () => {
 
     if (password !== confirmpassword) {
       console.error("password and confirm password din't matched");
-      alert("password and confirm password din'nt match");
+      alert("password and confirm password did'nt match");
       setPasswordsMatch(false);
       return;
     }
@@ -90,7 +90,7 @@ const Signup = () => {
           <input
             type="password"
             className="input-field"
-            placeholder=" confirm Password"
+            placeholder=" Confirm Password"
             value={confirmpassword}
             onChange={(e) => {
               setConfirmPassword(e.target.value);
@@ -99,14 +99,14 @@ const Signup = () => {
             required
           />
           {!passwordsMatch && (
-            <p style={{ color: "red" }}>passwords did'nt matched</p>
+            <p style={{ color: "red" }}>Password  did'nt matched</p>
           )}
           <button type="submit" class="login-btn">
             Sign Up
           </button>
           <br />
           <p>
-            Already have an account <Link to="/login">Click here</Link>
+            Already have an account <Link to="/">Click here</Link>
           </p>
         </form>
       </div>

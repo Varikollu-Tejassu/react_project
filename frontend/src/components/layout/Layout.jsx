@@ -3,6 +3,8 @@
 /* React Imports - Start */
 
 import React from 'react'
+import Sidebar from './Sidebar';
+import { Outlet } from 'react-router-dom';
 
 /* React Imports -End */
 
@@ -15,7 +17,10 @@ const Layout = () => {
     
 /* Render View Return - Start */
   return (
-    <div>Layout</div>
+  <>
+    <Sidebar/>
+      <Outlet/>
+  </>
   )
 
 /* Render View Return - End */

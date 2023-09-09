@@ -9,7 +9,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 /* Project components Imports - Start */
 
-import Login from './components/signin-up/Login';
+import Login from './components/signin-up/login';
 import Signup from './components/signin-up/Signup';
 import Calendar from "./components/calendar/Calendar"
 import Layout from './components/layout/Layout';
@@ -30,11 +30,11 @@ function App() {
 /* Render View Return - Start */
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/sidebar" element={<Sidebar/>}/>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
      <BrowserRouter>
      <Routes>
       <Route path="/" element={<Login/>} />
