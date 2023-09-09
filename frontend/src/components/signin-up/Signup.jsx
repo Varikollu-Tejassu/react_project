@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-const Signup = () => {
-  return (
-    <div>Signup</div>
-  )
-}
-=======
 // Importing required components
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
@@ -85,6 +76,5 @@ const Signup = () => {
     </div>
   );
 };
->>>>>>> origin/harinadhbuoy
 
 export default Signup;

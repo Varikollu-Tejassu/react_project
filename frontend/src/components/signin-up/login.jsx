@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Import Section - Start */
 
 /* React Imports - Start */
@@ -12,31 +11,12 @@ import React from 'react'
 /* Function - Start */
 const Login = () => {
 
-  
+    // Usesate hooks which initializs state value as an empty string
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
   /* Render View Return - Start */
-
-  return (
-    <div>login</div>
-  )
-
-  /* Render View Return - End */
-}
-/* Function - End */
-export default Login;
-/* Export default functionName */
-=======
-// Importing required components
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
-import logo from "../../assets/images/login_bg.png"
-// Creating login component
-const Login = () => {
-
-  // Usesate hooks which initializs state value as an empty string
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
   return (
     <div  className ="login-container" >
@@ -53,73 +33,10 @@ const Login = () => {
       </form>
     </div>
     </div>
-  );
-};
+  )
 
+  /* Render View Return - End */
+}
+/* Function - End */
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   // HandleLogin function which store user login credentials and calls the backend to check wheather they are registered users or not and based respponse
-//   // From server if the user exists then it navigates to user profile page and displays their data 
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     try {
-
-//       // Calling backend server here
-//       const response = await fetch('http://localhost:3000/login', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-
-//         //passing login credentials to server for validation
-//         body: JSON.stringify({ email, password }),
-//       });
-
-//       // If response ok (user registered or exist) navigates to profile page
-//       if (response.ok) {
-//         const userData = await response.json();
-//         navigate('/profile', { state: { user: userData } });
-
-//       } else {
-//         const errorData = await response.json();
-//         console.error('Error logging in:', errorData.error);
-//       }
-
-//     }
-
-//     // Catching occuring error
-//     catch (error) {
-//       console.error('Error logging in:', error);
-//     }
-//   };
->>>>>>> origin/harinadhbuoy
+/* Export default functionName */

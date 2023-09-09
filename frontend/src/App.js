@@ -1,23 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-// src/App.js
-
-// Importing required components
-import React from 'react';
-import Signup from './components/signin-up/Signup';
-import Login from './components/signin-up/login';
-// import User_profile from './components/';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
->>>>>>> origin/harinadhbuoy
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/layout/Sidebar';
-=======
 /* Import Section - Start */
->>>>>>> main
 
-<<<<<<< HEAD
 /* React Imports - Start */
 
 import './App.css';
@@ -48,13 +30,11 @@ function App() {
 /* Render View Return - Start */
   return (
     <div className="App">
-<<<<<<< HEAD
       <BrowserRouter>
         <Routes>
           <Route path="/sidebar" element={<Sidebar/>}/>
         </Routes>
       </BrowserRouter>
-=======
      <BrowserRouter>
      <Routes>
       <Route path="/" element={<Login/>} />
@@ -68,42 +48,15 @@ function App() {
 
      </Routes>
      </BrowserRouter>
->>>>>>> main
 
     </div>
   );
 
   /* Render View Return - End */
 }
-=======
-const App = () => {
-  return (
-    <div className="app">
-
-      {/* Routing */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-         {/* <Route path="/profile" element={<User_profile />} />  */}
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-};
->>>>>>> origin/harinadhbuoy
-
 
 /* Function - End */
 
 /* Export default functionName */
 
 export default App;
-
-
-
-
-
-
-
