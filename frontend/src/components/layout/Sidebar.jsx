@@ -1,9 +1,20 @@
+/* Import Section - Start */
+
+/* React Imports - Start */
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import logo from "../../assets/images/jmanLogo.png";
 
+/* React Imports -End */
+
+/* Import Section - End */
+
+/* Function - Start */
+
 const Sidebar = () => {
+  /* Render View Return - Start */
   return (
     <div>
       <div className="sidebar">
@@ -50,14 +61,14 @@ const Sidebar = () => {
 
           <div className="sidebar-logout">
             {/* <div>{userdata.Fname}</div> &nbsp;
-            <div style={{}} onClick={logout}>
-              <button onClick={logout}>
-                <i
-                  className="fa-solid fa-arrow-right-from-bracket"
-                  style={{ color: "#0f1724" }}
-                ></i>
-              </button>
-            </div> */}
+              <div style={{}} onClick={logout}>
+                <button onClick={logout}>
+                  <i
+                    className="fa-solid fa-arrow-right-from-bracket"
+                    style={{ color: "#0f1724" }}
+                  ></i>
+                </button>
+              </div> */}
             <div>Name</div>
             <div>
               <svg
@@ -83,6 +94,11 @@ const Sidebar = () => {
       </div>
     </div>
   );
+
+  /* Render View Return - End */
 };
 
+/* Function - End */
+
+/* Export default functionName */
 export default Sidebar;
