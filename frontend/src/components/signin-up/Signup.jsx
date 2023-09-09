@@ -15,6 +15,20 @@ const Signup = () => {
   const [passwordsMatch, setPasswordsMatch] = useState(true);
   const navigate = useNavigate();
 
+  function checkBreakpoint() {
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      // console.log(document.getElementById('my-div').classList)
+      document.getElementById('my-div').classList.remove("login-image-container2")
+      document.getElementById('my-div').classList.add("new")
+    } 
+    else {
+    document.getElementById('my-div').classList.remove('new');
+    document.getElementById('my-div').classList.add('login-image-container2');
+    }
+  }
+  
+  window.addEventListener('resize', checkBreakpoint);
+
   // Handlesignup function which performs some validations and calls backend server for storing data in database
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -54,7 +68,7 @@ const Signup = () => {
   return (
 
     <div  className ="login-container" >
-    <div className='login-image-container2'> 
+    <div className='login-image-container2' id="my-div"> 
         <img src={logo} />
     </div>
     <div className="login-form2">

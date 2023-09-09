@@ -11,9 +11,24 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  function checkBreakpoint() {
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      // console.log(document.getElementById('my-div').classList)
+      document.getElementById('my-div').classList.remove("login-image-container")
+      document.getElementById('my-div').classList.add("new")
+    } 
+    else {
+    document.getElementById('my-div').classList.remove('new');
+    document.getElementById('my-div').classList.add('login-image-container');
+    }
+  }
+  
+  window.addEventListener('resize', checkBreakpoint);
+  
+
   return (
     <div  className ="login-container" >
-    <div className='login-image-container'> 
+    <div className='login-image-container' id="my-div"> 
         <img src={logo} />
     </div>
     <div className="login-form">
