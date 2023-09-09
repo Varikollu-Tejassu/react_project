@@ -143,3 +143,66 @@ p {
 }
 
 /* Login Signup CSS ends */
+
+
+
+/* Calendar CSS start */
+
+.calendar-area{
+  width: 86.3vw;
+  /* padding-left: 13.7vw; */
+  margin-left: 13.7vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar-table{
+    /* display: none; */
+    text-align: center;
+    position: relative;
+    margin-top: -93vh;
+    width: 68vw;
+    margin-left: 1vw;        
+}
+
+.calendar-dropdown-area{
+  position: relative;
+  margin: -93vh 0 0 1%;
+  width: 18.5%;
+  background-color: #f4f3f9;
+}
+
+.calendar-dropdownFilter{
+  background-color: #19105b;
+  height: 6.7%;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.calendar-dropdownFilter select{
+  width:80%;
+  height: 1.3rem;
+  border-radius: 0.3rem;
+}
+
+.calendar-dropdown-details{
+  background-color: #c2bfd6;
+  height: 45%;
+  margin-top: 1%;
+  border-radius: 1rem;
+  padding: 5%;
+}
+
+.calendar-event-area{
+  background-color: #c5bff4;
+  height: 44%;
+  border-radius: 1rem;
+  margin-top: 1%;
+  padding: 5%;
+}
+
+
+/* Calendar CSS ends */
