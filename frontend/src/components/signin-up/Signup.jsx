@@ -99,7 +99,7 @@ const Signup = () => {
             required
           />
           {!passwordsMatch && (
-            <p style={{ color: "red" }}>Password  did'nt matched</p>
+            <p style={{ color: "red" }}>Password did'nt matched</p>
           )}
           <button type="submit" class="login-btn">
             Sign Up

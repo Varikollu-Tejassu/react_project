@@ -30,17 +30,12 @@ function App() {
 /* Render View Return - Start */
   return (
     <div className="App">
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/sidebar" element={<Sidebar/>}/>
-        </Routes>
-      </BrowserRouter> */}
      <BrowserRouter>
      <Routes>
       <Route path="/" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/dashboard" element={<Layout/>}>
-          <Route path="/dashboard/events" element={<Calendar/>}/>
+          <Route path="/dashboard" element={<Calendar/>}/>
           <Route path="/dashboard/projectallocation" element={<ProjectAllocation/>}/>
           <Route path="/dashboard/manageevents" element={<ManageEvents/>}/>
           <Route path="/dashboard/profile" element={<Profile/>}/>
