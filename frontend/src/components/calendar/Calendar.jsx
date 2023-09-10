@@ -45,16 +45,8 @@ const Calendar = () => {
 
   return (
     <div className="calendar-area">
-      <div
-        className="calendar-table"
-        // style={{
-        //   textAlign: "center",
-        //   position: "relative",
-        //   marginTop: "-93vh",
-        //   width: "68vw",
-        //   marginLeft: "1vw",
-        // }}
-      >
+      <div className="calendar-table">
+        <div className="dashboard-header">Events</div>
         {isLoading ? ( // Display loading indicator while fetching data
           <ClipLoader color={"black"} size={50} />
         ) : (
@@ -100,38 +92,41 @@ const Calendar = () => {
             height={"90vh"}
           />
         )}
-
-        {/* {evtDet && ( <div className="event-details"><p>{evtDet.title}</p> </div> )} */}
       </div>
-      <div className="calendar-dropdown-area">
-        {isLoading ? ( // Display loading indicator while fetching data
-          <></>
-        ) : (
-          <div className="calendar-dropdownFilter">
-            <select
-              id="category"
-              onChange={handleCategoryChange}
-              value={selectedCategory}
-            >
-              <option value="All">ALL</option>
-              <option value="Holiday">Holiday</option>
-              <option value="Event">Event</option>
-              <option value="Birthday">Birthday</option>
-              <option value="Festival">Festival</option>
-              <option value="Others">Others</option>
-            </select>
-            <i className="fa-solid fa-filter"></i>
+      {isLoading ? ( // Display loading indicator while fetching data
+        ""
+      ) : (
+        <div className="calendar-dropdown-area">
+          {isLoading ? ( // Display loading indicator while fetching data
+            <></>
+          ) : (
+            <div className="calendar-dropdownFilter">
+              <select
+                id="category"
+                onChange={handleCategoryChange}
+                value={selectedCategory}
+              >
+                <option value="All">ALL</option>
+                <option value="Holiday">Holiday</option>
+                <option value="Event">Event</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Festival">Festival</option>
+                <option value="Others">Others</option>
+              </select>
+              <i className="fa-solid fa-filter"></i>
+            </div>
+          )}
+
+          <div className="calendar-dropdown-details">
+            <p className="calendar-dropdown-details-header">Upcoming Events</p>
           </div>
-        )}
 
-        <div className="calendar-dropdown-details">
-          For upcoming events
+          <div className="calendar-event-area">
+            <p className="calendar-event-area-header">Events Details</p>
+          </div>
         </div>
-
-        <div className="calendar-event-area">
-          For selected Events
-        </div>
-      </div>
+      )}
+      ;
     </div>
   );
 
