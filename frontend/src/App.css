@@ -208,6 +208,9 @@ p {
 
 @media only screen and (max-width: 380px) {
   /*Sidebar css starts*/
+  body{
+    overflow-y: scroll;
+  }
   .sidebar {
     height: 100vh;
     width: 0%;
@@ -247,7 +250,6 @@ p {
   }
 
   .fc-header-toolbar.fc-toolbar{
-    /* background-color: red; */
     padding-top: 10%;
     height: 8rem;
     display: flex;
@@ -263,20 +265,11 @@ p {
   }
 
   .fc-toolbar-chunk{
-    /* background-color: #7c3375; */
     width: 68vw;
     display: flex;
     justify-content: space-around;
     font-size: 12px;
   }
-
-  /* .cal+endar-table {
-    text-align: center;
-    position: relative;
-    margin-top: -93vh;
-    width: 68vw;
-    margin-left: 1vw;
-  } */
 
   .calendar-dropdown-area {
     position: relative;
