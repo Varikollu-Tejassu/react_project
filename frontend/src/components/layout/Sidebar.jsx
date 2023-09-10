@@ -94,7 +94,6 @@ const Sidebar = () => {
               </Link>
             </li>
           </ul>
-
           <div className="sidebar-logout">
             {/* <div>{userdata.Fname}</div> &nbsp;
               <div style={{}} onClick={logout}>
@@ -133,6 +132,7 @@ const Sidebar = () => {
 
   /* Render View Return - End */
 };
+  /* Render View Return - End */
 
 /* Function - End */
 
