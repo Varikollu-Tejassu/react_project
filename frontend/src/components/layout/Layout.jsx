@@ -2,7 +2,8 @@
 
 /* React Imports - Start */
 
-import React from 'react'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 /* React Imports -End */
 
@@ -15,7 +16,10 @@ const Layout = () => {
     
 /* Render View Return - Start */
   return (
-    <div>Layout</div>
+    <>
+    <Layout/>
+    <Outlet></Outlet>
+    </>
   )
 
 /* Render View Return - End */

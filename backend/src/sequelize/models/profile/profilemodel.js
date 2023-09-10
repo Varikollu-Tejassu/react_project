@@ -1,5 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
     const profile = sequelize.define("profile", {
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        unique: false,
+        primaryKey: true,
+      },
       first_name: {
         type: Sequelize.STRING,
         allowNull: true,
@@ -14,7 +20,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
-        primaryKey: true
+        
       },
       joining_date: {
         type: Sequelize.DATEONLY,

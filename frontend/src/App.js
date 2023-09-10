@@ -16,6 +16,7 @@ import Layout from './components/layout/Layout';
 import Profile from "./components/profile/Profile";
 import ManageEvents from './components/manageEvents/ManageEvents';
 import ProjectAllocation from './components/projectAllocation/ProjectAllocation';
+// import Protected from './components/authenticate/Protected';
 
 /* Project components Imports -End */
 

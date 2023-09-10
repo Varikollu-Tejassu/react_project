@@ -1,5 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
     const projectAllocation = sequelize.define("projectAllocation", {
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        unique: false,
+        primaryKey: true,
+      },
       project_id: {
         type: Sequelize.STRING,
         allowNull: true,
@@ -30,6 +36,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
         allowNull: false,
         unique: false,
+       
       },
       reporting_manager: {
         type: Sequelize.STRING,

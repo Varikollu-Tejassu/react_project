@@ -12,13 +12,13 @@ import React from 'react';
 
 const Sidebar = () => {
 
-    
-/* Render View Return - Start */
+
+  /* Render View Return - Start */
   return (
     <div>Sidebar</div>
   )
 
-/* Render View Return - End */
+  /* Render View Return - End */
 }
 
 /* Function - End */

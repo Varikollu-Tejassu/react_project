@@ -1,7 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const calendarmodel = sequelize.define("calendarmodel", {
-      event_id: {
-        type: Sequelize.INTEGER
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        unique: false,
+        primaryKey: true
       },
       event_type: {
         type: Sequelize.STRING
