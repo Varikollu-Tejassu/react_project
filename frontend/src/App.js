@@ -9,7 +9,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 /* Project components Imports - Start */
 
-import Login from './components/signin-up/Login';
+import Login from './components/signin-up/login';
 import Signup from './components/signin-up/Signup';
 import Calendar from "./components/calendar/Calendar"
 import Layout from './components/layout/Layout';
@@ -35,7 +35,7 @@ function App() {
       <Route path="/" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/dashboard" element={<Layout/>}>
-          <Route path="/dashboard/events" element={<Calendar/>}/>
+          <Route path="/dashboard/" element={<Calendar/>}/>
           <Route path="/dashboard/projectallocation" element={<ProjectAllocation/>}/>
           <Route path="/dashboard/manageevents" element={<ManageEvents/>}/>
           <Route path="/dashboard/profile" element={<Profile/>}/>
