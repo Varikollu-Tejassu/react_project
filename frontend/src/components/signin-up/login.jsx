@@ -1,8 +1,10 @@
 // Importing required components
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import "../../services/signin-up/loginService";
+import logo from "../../assets/images/login_bg.png";
+import image2 from "../../assets/images/image2.png";
 
-import logo from "../../assets/images/login_bg.png"
 // Creating login component
 const Login = () => {
 
@@ -26,13 +28,17 @@ const Login = () => {
   window.addEventListener('resize', checkBreakpoint);
   
 
+
   return (
     <div  className ="login-container" >
     <div className='login-image-container' id="my-div"> 
         <img src={logo} />
     </div>
     <div className="login-form">
-      <form className='login-form-container'>
+          <div> 
+              <img src={image2} />
+          </div>
+      <form className='login-form-container' onSubmit={loginSubmit}>
          <h2>Sign In</h2>
         <input type="email" className= "input-field" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         <input type="password" className= "input-field" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required /><br/>
@@ -102,7 +108,6 @@ export default Login;
 //         const errorData = await response.json();
 //         console.error('Error logging in:', errorData.error);
 //       }
-
 //     }
 
 //     // Catching occuring error

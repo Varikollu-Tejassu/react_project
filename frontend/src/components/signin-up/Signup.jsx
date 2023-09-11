@@ -1,7 +1,9 @@
 // Importing required components
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import "../../services/signin-up/SignupService";
 import logo from "../../assets/images/login_bg.png"
+import image2 from "../../assets/images/image2.png"
 
 // Creating signup component
 const Signup = () => {
@@ -72,12 +74,15 @@ const Signup = () => {
         <img src={logo} />
     </div>
     <div className="login-form2">
+          <div className='my-image'> 
+              <img src={image2} />
+          </div>
       <form className='login-form-container2'>
       <h2>Sign Up</h2>
         <input type="text" className= "input-field" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
         <input type="email" className= "input-field" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" className= "input-field" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <input type="date" className= "input-field" placeholder="date of birth" value={dob} onChange={(e) => setDob(e.target.value)} required />
+        <input type="password" className= "input-field" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <input type="password"className= "input-field" placeholder=" confirm Password" value={confirmpassword} onChange={(e) => {
           setConfirmPassword(e.target.value);
           setPasswordsMatch(e.target.value === password);

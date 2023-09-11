@@ -10,7 +10,7 @@
   height:100%;
 }
 .login-form {
-  margin-top:10%;
+  margin-top:5%;
   /* margin-right:5%; */
   padding: 20px;
   border: 1px solid #ccc;
@@ -22,16 +22,17 @@
 
 
 
+
 .login-image-container2{
   width:95%;
 }
 .login-image-container2 img{
-  width: 89.5%;
+  width: 90%;
   height:100%;
   
 }
 .login-form2 {
-  margin-top:5%;
+  margin-top: -1%;
   /* margin-right: 10%; */
   padding: 20px;
   border: 1px solid #ccc;
@@ -53,9 +54,10 @@
 .login-form-container2
 {
   /* background-color: blue; */
-  width: 80%;
+  width: 82%;
   height: 50%;
   padding-left: 15%;
+  /* margin-bottom: 100%; */
 }
 
 .login-btn {
@@ -77,7 +79,7 @@
 
 p
 {
-  margin-left: 20%;
+  margin-left: 15%;
 }
 
 
@@ -97,3 +99,12 @@ p
   display: none;
 }
 
+.my-image
+{
+  margin-left: 8%;
+}
+
+h2
+{
+  color: rgb(35, 1, 63);
+}
