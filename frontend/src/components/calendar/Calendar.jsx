@@ -15,9 +15,9 @@ import calServices from "../../services/calendar/CalendarService";
 /* Function - Start */
 
 const Calendar = () => {
-  // const [eventdata, setEventdata] = useState([]);
-  // const [selectedCategory, setSelectedCategory] = useState("All");
-  // const [isLoading, setIsLoading] = useState(true); // Add a loading state
+  const [eventdata, setEventdata] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isLoading, setIsLoading] = useState(true); // Add a loading state
 
   // const getSelectedCategory = () => {
   //   calServices

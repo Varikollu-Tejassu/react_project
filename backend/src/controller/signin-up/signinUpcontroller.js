@@ -13,16 +13,22 @@ dotenv.config();
 const table = creating.signinUp;
 
 
-const login = async(req,res)=>{
+const login = async (req,res)=>{
+ 
 const user = await table.findOne({ where : {email:req.body.email}});
+console.log(user)
  if(user){
     const password_valid = await bcrypt.compare(req.body.password,user.password);
+    console.log("herepass",password_valid);
     if(password_valid){
         const email = user.email
         const token = jwt.sign({ email },process.env.JWT_SECRET_KEY,{expiresIn:'1d'});
+        console.log("TRUEHERE");
         res.cookie('token',token)
         res.status(200).json({ token : token });
     } else {
+      console.log("TRUE-HERE");
+
       res.status(400).json({ error : "Password Incorrect" });
     }
   
@@ -46,6 +52,7 @@ const user = await table.findOne({ where : {email:req.body.email}});
       email : req.body.email,
       dob : req.body.dob,
       password : await bcrypt.hash(req.body.password, salt)
+      // password:req.body.password
 
     };
 

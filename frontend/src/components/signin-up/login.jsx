@@ -1,33 +1,17 @@
-/* Import Section - Start */
-
-/* React Imports - Start */
+// Importing required components
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
-import logo from "../../assets/images/login_bg.png"
-
-
-/* React Imports -End */
-
-/* Import Section - End */
-
-
-/* Function - Start */
-=======
-import "../../services/signin-up/loginService";
+import loginservice from  "../../services/signin-up/loginService";
 import logo from "../../assets/images/login_bg.png";
 import image2 from "../../assets/images/image2.png";
 
 // Creating login component
->>>>>>> origin/harinadhbuoy
 const Login = () => {
 
-    // Usesate hooks which initializs state value as an empty string
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-
-  /* Render View Return - Start */
+  // Usesate hooks which initializs state value as an empty string
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   function checkBreakpoint() {
     if (window.matchMedia('(max-width: 600px)').matches) {
@@ -42,6 +26,16 @@ const Login = () => {
   }
   
   window.addEventListener('resize', checkBreakpoint);
+
+  const loginhandle = async (e)=>{
+    e.preventDefault();
+  loginservice.userLogin(email,password).then(response=>{
+    if(response){
+      navigate('/dashboard')
+    }
+  })
+  }
+ 
   
 
 
@@ -54,7 +48,7 @@ const Login = () => {
           <div> 
               <img src={image2} />
           </div>
-      <form className='login-form-container' onSubmit={loginSubmit}>
+      <form className='login-form-container' onSubmit={loginhandle}>
          <h2>Sign In</h2>
         <input type="email" className= "input-field" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         <input type="password" className= "input-field" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required /><br/>
@@ -63,77 +57,7 @@ const Login = () => {
       </form>
     </div>
     </div>
-  )
+  );
+};
 
-  /* Render View Return - End */
-}
-/* Function - End */
 export default Login;
-<<<<<<< HEAD
-/* Export default functionName */
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   // HandleLogin function which store user login credentials and calls the backend to check wheather they are registered users or not and based respponse
-//   // From server if the user exists then it navigates to user profile page and displays their data 
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     try {
-
-//       // Calling backend server here
-//       const response = await fetch('http://localhost:3000/login', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-
-//         //passing login credentials to server for validation
-//         body: JSON.stringify({ email, password }),
-//       });
-
-//       // If response ok (user registered or exist) navigates to profile page
-//       if (response.ok) {
-//         const userData = await response.json();
-//         navigate('/profile', { state: { user: userData } });
-
-//       } else {
-//         const errorData = await response.json();
-//         console.error('Error logging in:', errorData.error);
-//       }
-//     }
-
-//     // Catching occuring error
-//     catch (error) {
-//       console.error('Error logging in:', error);
-//     }
-//   };
->>>>>>> origin/harinadhbuoy

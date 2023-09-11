@@ -8,7 +8,7 @@ var router = express.Router();
 
 
 
-router.use('/login',login)
+router.get('/login',login)
 
 router.post('/register',register)
 
