@@ -14,14 +14,10 @@ const create = async (req,res,next)=>{
 }
 
 
-const getdata = async (req,res)=>{
+const getevents = async (req,res)=>{
     try{
-        const{id}=req.params;
-        const gettingdata = await table.findOne({
-            where : {
-                id:id
-            }
-        })
+       
+        const gettingdata = await table.findAll()
         res.send(gettingdata);
     }
     catch(error){
@@ -29,16 +25,71 @@ const getdata = async (req,res)=>{
     }
 }
 
-const postdata = async (req,res)=>{
-    try {
-        // const { title, description } = req.body;
-        const task = await table.create({ title:"hi",description:"hiiiiiiiiiiiiiiii", published:false });
-        res.json(task);
-      } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Internal Server Error' });
-      }
+const addevents = async (req,res)=>{
+    try{
+        var event = {
+            event_type : req.body.event_type,
+            title : req.body.title,
+            start_date : req.body.start_date,
+            end_date : req.body.end_date,
+            start_time : req.body.start_time,
+            end_time : req.body.end_time,
+            is_allday : ((start_date && end_date)==="" ? true : false),
+            other_details : req.body.other_details 
+      
+          };
+
+        const gettingdata = await table.create(event)
+        res.send(gettingdata);
     }
+    catch(error){
+        console.log(error)
+    }
+}
 
 
-module.exports ={create,getdata,postdata}
+const deleteevents = async (req,res)=>{
+    try{
+        const {id} = req.params;
+        const gettingdata = await table.destroy({
+            where:{id:id}
+        })
+       res.send({message:"deleted successfulluy"})
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+const updateevents= async (req,res)=>{
+    try{
+        var event = {
+        event_type : req.body.event_type,
+        title : req.body.title,
+        start_date : req.body.start_date,
+        end_date : req.body.end_date,
+        start_time : req.body.start_time,
+        end_time : req.body.end_time,
+        is_allday : ((start_date && end_date)==="" ? true : false),
+        other_details : req.body.other_details 
+  
+      };
+
+      const {id} = req.params;
+
+      const updatingdata = await table.update(event,{
+        where:{id:id}
+      })
+      res.send({message:"updated successfulluy"})
+
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+
+
+
+
+module.exports ={create,getevents,addevents,deleteevents,updateevents}

@@ -11,8 +11,8 @@ const jwt = require('jsonwebtoken');
 
 const calendar = require('./routes/calendar/calendarroutes')
 const manageEvents = require('./routes/manageEvents/manageEventsroutes')
-// const profile = require('./routes/profile/profileroutes')
-// const profileAllocation = require('./routes/projectAllocation/projectAllocationroutes')
+const profile = require('./routes/profile/profileroutes')
+const profileAllocation = require('./routes/projectAllocation/projectAllocationroutes')
 const signinUp = require('./routes/signin-up/signin-uproutes')
 
 dotenv.config();
@@ -35,22 +35,24 @@ app.use(express.urlencoded({ extended: true }));
 //routes
 app.use("/api/calendar", calendar)
 app.use("/api/manageEvents", manageEvents)
-// app.use("/api/profile",profile)
-// app.use("/api/projectAllocation",profileAllocation,)
+app.use("/api/profile",profile)
+app.use("/api/projectAllocation",profileAllocation)
 app.use("/api/signinUp", signinUp)
+const port = process.env.PORT
 
 
+// const { verifyuser } = require('./middleware/authentication')
 
-const { verifyuser } = require('./middleware/authentication')
 
-
-// app.get("/api/authenticateuser",verifyuser );
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 
 
 //when unmatched routes are found
 
-app.use(async (req, res) => {
+app.use( (req, res) => {
   res.status(404).send('Route is not found.');
 })
 
@@ -65,7 +67,7 @@ db.sequelize.sync(
 });
 
 
-const port = process.env.PORT
+
 
 // app.listen(port,()=>{
 //     console.log(`server is running on ${port}`);
