@@ -15,27 +15,27 @@ import calServices from "../../services/calendar/CalendarService";
 /* Function - Start */
 
 const Calendar = () => {
-  const [eventdata, setEventdata] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [isLoading, setIsLoading] = useState(true); // Add a loading state
+  // const [eventdata, setEventdata] = useState([]);
+  // const [selectedCategory, setSelectedCategory] = useState("All");
+  // const [isLoading, setIsLoading] = useState(true); // Add a loading state
 
-  const getSelectedCategory = () => {
-    calServices
-      .selectedCategory(selectedCategory)
-      .then((response) => {
-        setEventdata(response.data);
-      })
-      .catch((error) => {
-        throw error;
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+  // const getSelectedCategory = () => {
+  //   calServices
+  //     .selectedCategory(selectedCategory)
+  //     .then((response) => {
+  //       setEventdata(response.data);
+  //     })
+  //     .catch((error) => {
+  //       throw error;
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+  // };
 
-  useEffect(() => {
-    getSelectedCategory();
-  }, [selectedCategory]);
+  // useEffect(() => {
+  //   getSelectedCategory();
+  // }, [selectedCategory]);
 
   //  For DropDown
 
