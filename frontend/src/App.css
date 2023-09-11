@@ -69,7 +69,11 @@
   height: 100%;
 }
 .login-form {
+<<<<<<< HEAD
   margin-top: 10%;
+=======
+  margin-top:5%;
+>>>>>>> origin/harinadhbuoy
   /* margin-right:5%; */
   padding: 20px;
   border: 1px solid #ccc;
@@ -78,6 +82,7 @@
   border: none;
 }
 
+<<<<<<< HEAD
 .login-image-container2 {
   width: 95%;
 }
@@ -87,12 +92,29 @@
 }
 .login-form2 {
   margin-top: 5%;
+=======
+
+
+
+
+.login-image-container2{
+  width:95%;
+}
+.login-image-container2 img{
+  width: 90%;
+  height:100%;
+  
+}
+.login-form2 {
+  margin-top: -1%;
+>>>>>>> origin/harinadhbuoy
   /* margin-right: 10%; */
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #fff;
   background-color: transparent;
   border: none;
+  /* margin-right: 5%; */
 }
 
 .input-field {
@@ -106,9 +128,10 @@
 
 .login-form-container2 {
   /* background-color: blue; */
-  width: 80%;
+  width: 82%;
   height: 50%;
   padding-left: 15%;
+  /* margin-bottom: 100%; */
 }
 
 .login-btn {
@@ -128,8 +151,14 @@
   background-color: #14017c;
 }
 
+<<<<<<< HEAD
 p {
   margin-left: 20%;
+=======
+p
+{
+  margin-left: 15%;
+>>>>>>> origin/harinadhbuoy
 }
 
 @media screen and (max-width: 600px) {
@@ -144,8 +173,17 @@ p {
 
 /* Login Signup CSS ends */
 
+.new
+{
+  display: none;
+}
 
+.my-image
+{
+  margin-left: 8%;
+}
 
+<<<<<<< HEAD
 /* Calendar CSS start */
 
 .calendar-area {
@@ -369,3 +407,9 @@ p {
   }
   /* Calendar css ends */
 }
+=======
+h2
+{
+  color: rgb(35, 1, 63);
+}
+>>>>>>> origin/harinadhbuoy

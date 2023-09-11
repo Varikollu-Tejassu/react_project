@@ -1,7 +1,15 @@
 // Importing required components
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../../assets/images/login_bg.png";
+=======
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import "../../services/signin-up/SignupService";
+import logo from "../../assets/images/login_bg.png"
+import image2 from "../../assets/images/image2.png"
+>>>>>>> origin/harinadhbuoy
 
 // Creating signup component
 const Signup = () => {
@@ -13,6 +21,20 @@ const Signup = () => {
   const [confirmpassword, setConfirmPassword] = useState("");
   const [passwordsMatch, setPasswordsMatch] = useState(true);
   const navigate = useNavigate();
+
+  function checkBreakpoint() {
+    if (window.matchMedia('(max-width: 600px)').matches) {
+      // console.log(document.getElementById('my-div').classList)
+      document.getElementById('my-div').classList.remove("login-image-container2")
+      document.getElementById('my-div').classList.add("new")
+    } 
+    else {
+    document.getElementById('my-div').classList.remove('new');
+    document.getElementById('my-div').classList.add('login-image-container2');
+    }
+  }
+  
+  window.addEventListener('resize', checkBreakpoint);
 
   // Handlesignup function which performs some validations and calls backend server for storing data in database
   const handleSignUp = async (e) => {
@@ -48,6 +70,7 @@ const Signup = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="login-container">
       <div className="login-image-container2">
         <img src={logo} />
@@ -110,6 +133,32 @@ const Signup = () => {
           </p>
         </form>
       </div>
+=======
+
+    <div  className ="login-container" >
+    <div className='login-image-container2' id="my-div"> 
+        <img src={logo} />
+    </div>
+    <div className="login-form2">
+          <div className='my-image'> 
+              <img src={image2} />
+          </div>
+      <form className='login-form-container2'>
+      <h2>Sign Up</h2>
+        <input type="text" className= "input-field" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
+        <input type="email" className= "input-field" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input type="date" className= "input-field" placeholder="date of birth" value={dob} onChange={(e) => setDob(e.target.value)} required />
+        <input type="password" className= "input-field" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <input type="password"className= "input-field" placeholder=" confirm Password" value={confirmpassword} onChange={(e) => {
+          setConfirmPassword(e.target.value);
+          setPasswordsMatch(e.target.value === password);
+        }} required />
+        {!passwordsMatch && <p style={{ color: 'red' }}>passwords did'nt matched</p>}
+        <button type="submit" class="login-btn">Sign Up</button><br/>
+        <p>Already have an account <Link to="/login">Click here</ Link></p>
+      </form>
+    </div>
+>>>>>>> origin/harinadhbuoy
     </div>
   );
 };
