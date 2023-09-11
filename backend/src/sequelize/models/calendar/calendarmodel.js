@@ -29,6 +29,10 @@ module.exports = (sequelize, Sequelize) => {
       end_time: {
         type: Sequelize.TIME
       },
+      is_allday: {
+        type:Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
       other_details :{
         type:Sequelize.STRING
       }

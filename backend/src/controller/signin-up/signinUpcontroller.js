@@ -10,13 +10,13 @@ const cookieParser = require('cookie-parser')
 
 dotenv.config();
 
-const table = creating.signinUp
+const table = creating.signinUp;
 
 
 const login = async(req,res)=>{
-const user = await table.findOne({ where : {email:'hims@gmail.com'}});
+const user = await table.findOne({ where : {email:req.body.email}});
  if(user){
-    const password_valid = await bcrypt.compare('tejas123.',user.password);
+    const password_valid = await bcrypt.compare(req.body.password,user.password);
     if(password_valid){
         const email = user.email
         const token = jwt.sign({ email },process.env.JWT_SECRET_KEY,{expiresIn:'1d'});
@@ -38,8 +38,7 @@ const user = await table.findOne({ where : {email:'hims@gmail.com'}});
 
 
   const register= async(req, res, next)=>{
-    //res.status(201).json(req.body);
-    //add new user and return 201
+  
     const salt = await bcrypt.genSalt(10);
     var usr = {
       first_name : req.body.first_name,
@@ -49,14 +48,8 @@ const user = await table.findOne({ where : {email:'hims@gmail.com'}});
       password : await bcrypt.hash(req.body.password, salt)
 
     };
-    // var usr = {
-    //     first_name : 'hoimansgu',
-    //     last_name : 'tejas',
-    //     email : 'himash@gmail.com',
-    //     dob : '2022-10-10',
-    //     password :"hhdfgkhdfkg"
-  
-    //   };
+
+   
     created_user = await table.create(usr);
     res.status(201).json(created_user);
   };

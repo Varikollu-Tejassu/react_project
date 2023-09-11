@@ -1,17 +1,18 @@
 
 const express = require('express')
-const {create,getdata, postdata} = require('../../controller/calendar/calendarcontroller')
+const {create,selectedEvents, selectedEventsbyweek} = require('../../controller/calendar/calendarcontroller')
 
 var router = express.Router();
 
 
 
+router.use('/selectedEventsbyweek', selectedEventsbyweek)
 
-router.get('/',create)
+router.use('/:selected', selectedEvents)
 
-router.get('/:id',getdata)
+router.use('/', create)
 
-router.post('/add',postdata)
+
 
 
 module.exports=router;

@@ -16,9 +16,8 @@ const verifyuser = async (req, res, next) => {
                 return res.json({ Error: "Token is not ok" })
             }
             else {
-                // req.email = decoded.email;
+                req.email = decoded.email;
                 // console.log(req.email)
-                res.json(decoded.email)
                 next()
             }
         })

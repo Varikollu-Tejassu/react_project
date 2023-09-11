@@ -1,6 +1,6 @@
 
 const express = require('express')
-const {login,register,create} = require('../../controller/signin-up/signinUpcontroller')
+const {login,register} = require('../../controller/signin-up/signinUpcontroller')
 
 
 var router = express.Router();
@@ -8,11 +8,11 @@ var router = express.Router();
 
 
 
-router.get('/login',login)
+router.use('/login',login)
 
 router.post('/register',register)
 
-router.get('/:email',create)
+
 
 
 
