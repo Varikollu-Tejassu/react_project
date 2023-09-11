@@ -13,14 +13,18 @@ dotenv.config();
 const table = creating.signinUp;
 
 
-const login = async(req,res)=>{
-const user = await table.findOne({ where : {email:req.body.email}});
+const login = async (req,res,next)=>{
+  const { email, password } = req.body
+
+const user = await table.findOne({ where : {email:email}});
  if(user){
-    const password_valid = await bcrypt.compare(req.body.password,user.password);
+    const password_valid = await bcrypt.compare(password,user.password);
     if(password_valid){
+      
         const email = user.email
         const token = jwt.sign({ email },process.env.JWT_SECRET_KEY,{expiresIn:'1d'});
         res.cookie('token',token)
+        console.log(token)
         res.status(200).json({ token : token });
     } else {
       res.status(400).json({ error : "Password Incorrect" });

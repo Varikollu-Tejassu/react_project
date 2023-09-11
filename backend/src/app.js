@@ -9,6 +9,8 @@ const mysql2 = require('mysql2')
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 
+const bodyParser = require('body-parser')
+
 const calendar = require('./routes/calendar/calendarroutes')
 const manageEvents = require('./routes/manageEvents/manageEventsroutes')
 const profile = require('./routes/profile/profileroutes')
@@ -24,7 +26,7 @@ const corsOptions = {
   credentials: true,
 
 }
-
+app.use(bodyParser.json());  
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
