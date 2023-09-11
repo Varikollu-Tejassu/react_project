@@ -4,7 +4,6 @@
 
 import React from 'react'
 import Sidebar from './Sidebar';
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 /* React Imports -End */
@@ -19,8 +18,8 @@ const Layout = () => {
 /* Render View Return - Start */
   return (
     <>
-    <Layout/>
-    <Outlet></Outlet>
+      <Sidebar/>
+      <Outlet/>
     </>
   )
 

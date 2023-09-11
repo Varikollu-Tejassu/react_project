@@ -212,7 +212,6 @@ p {
 }
 
 .calendar-dropdown-details-header{
-  background-color: red;
   margin-top: -5%;
   position: relative;
   width: 16vw;
@@ -287,7 +286,9 @@ p {
 
   /* Calendar css Starts */
   .calendar-area {
-    width: 6.3vw;
+    width: 70vw;
+    height: 62vh;
+    background-color: white;
     margin-left: 13.7vw;
     display: flex;
     flex-direction: column;
@@ -352,6 +353,19 @@ p {
     border-radius: 0.5rem;
     margin-top: 1%;
     padding: 5%;
+  }
+
+  .calendar-dropdown-details-header, .calendar-event-area-header{
+    margin-top: -5%;
+    position: relative;
+    width: 70vw;
+    margin-left: -6%;
+    border-top-right-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
+    padding: 2%;
+    text-align: center;
+    background-color: #14017c;
+    color: white;
   }
   /* Calendar css ends */
 }
