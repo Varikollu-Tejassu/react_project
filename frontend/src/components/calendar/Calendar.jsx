@@ -6,7 +6,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import ClipLoader from "react-spinners/ClipLoader";
-import axios from "axios";
+import calServices from "../../services/calendar/CalendarService";
 
 /* React Imports -End */
 
@@ -19,23 +19,26 @@ const Calendar = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isLoading, setIsLoading] = useState(true); // Add a loading state
 
-  useEffect(() => {
-    console.log("OBJ->", selectedCategory);
-
-    axios
-      .get(`http://localhost:8080/eventdata/${selectedCategory}`)
+  const getSelectedCategory = () => {
+    calServices
+      .selectedCategory(selectedCategory)
       .then((response) => {
         setEventdata(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching events:", error);
+        throw error;
       })
       .finally(() => {
         setIsLoading(false);
       });
+  };
+
+  useEffect(() => {
+    getSelectedCategory();
   }, [selectedCategory]);
 
   //  For DropDown
+
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
     console.log(selectedCategory);
@@ -93,11 +96,11 @@ const Calendar = () => {
           />
         )}
       </div>
-      {isLoading ? ( // Display loading indicator while fetching data
+      {isLoading ? (
         ""
       ) : (
         <div className="calendar-dropdown-area">
-          {isLoading ? ( // Display loading indicator while fetching data
+          {isLoading ? (
             <></>
           ) : (
             <div className="calendar-dropdownFilter">
@@ -119,10 +122,14 @@ const Calendar = () => {
 
           <div className="calendar-dropdown-details">
             <p className="calendar-dropdown-details-header">Upcoming Events</p>
+            <div className="calendar-dropdown-eventdata">
+              dropdownFilter data
+            </div>
           </div>
 
           <div className="calendar-event-area">
             <p className="calendar-event-area-header">Events Details</p>
+            <div className="calendar-event-selecteddata">selected data</div>
           </div>
         </div>
       )}
