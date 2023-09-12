@@ -9,7 +9,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 /* Project components Imports - Start */
 
-import Login from './components/signin-up/login';
+import Login from './components/signin-up/Login';
 import Signup from './components/signin-up/Signup';
 import Calendar from "./components/calendar/Calendar"
 import Layout from './components/layout/Layout';
