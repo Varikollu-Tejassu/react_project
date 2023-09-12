@@ -5,9 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
 height: 70vh;
 overflow-y: hidden;
 
+=======
+  /* height:30%; */
+>>>>>>> cc87bb8f32e2fd239673bb77420df6d7d85aceab
 }
 
 code {

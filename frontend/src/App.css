@@ -1,4 +1,5 @@
 .login-container{
+<<<<<<< HEAD
   display: flex;
   flex-direction: row;
 }
@@ -108,3 +109,110 @@ h2
 {
   color: rgb(35, 1, 63);
 }
+=======
+    display: flex;
+    flex-direction: row;
+  }
+  .login-image-container{
+    width:60%;
+  }
+  .login-image-container img{
+    width: 90%;
+    height:115%;
+  }
+  .login-form {
+    margin-top:5%;
+    /* margin-right:5%; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-color: transparent;
+    border: none;
+  }
+    
+  .login-image-container2{
+    width:95%;
+  }
+  .login-image-container2 img{
+    width: 90%;
+    height:115%;
+    
+  }
+  .login-form2 {
+    margin-top: -1%;
+    /* margin-right: 10%; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-color: transparent;
+    border: none;
+    /* margin-right: 5%; */
+  }
+  
+  .input-field {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin: 10px 0; 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  
+  .login-form-container2
+  {
+    /* background-color: blue; */
+    width: 82%;
+    height: 50%;
+    padding-left: 15%;
+    /* margin-bottom: 100%; */
+  }
+  
+  .login-btn {
+    background-color: rgb(31, 2, 85);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 30%;
+    position: static;
+    width:40%;
+    font-size: 100%;
+  }
+  
+  .login-btn:hover {
+    background-color: #14017c;
+  }
+  
+  p
+  {
+    margin-left: 15%;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .auth-form {
+      width: 90%;
+      padding: 15px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  
+  .new
+  {
+    display: none;
+  }
+  
+  .my-image
+  {
+    margin-left: 8%;
+  }
+  
+  .login-form-container h2
+  {
+    color: rgb(35, 1, 63);
+  }
+>>>>>>> cc87bb8f32e2fd239673bb77420df6d7d85aceab
