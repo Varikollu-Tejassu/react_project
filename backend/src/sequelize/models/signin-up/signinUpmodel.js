@@ -1,43 +1,40 @@
 module.exports = (sequelize, Sequelize) => {
-    const signinup = sequelize.define("signinUp", {
+  const signinup = sequelize.define(
+    "signinUp",
+    {
       first_name: {
         type: Sequelize.STRING,
         allowNull: true,
-        unique: false
+        unique: false,
       },
       last_name: {
         type: Sequelize.STRING,
         allowNull: true,
-        unique: false
+        unique: false,
       },
       email: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
-        primaryKey: true
+        primaryKey: true,
       },
       dob: {
         type: Sequelize.DATEONLY,
         allowNull: true,
-        unique: false
+        unique: false,
       },
       password: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: false
-
-      }
-
-
-
+        unique: false,
+      },
     },
     {
-      timestamps:false,
-      createdAt:false,
-      updatedAt:false
+      timestamps: false,
+      createdAt: false,
+      updatedAt: false,
     }
-  
-);
-  
-    return signinup;
-  };
+  );
+
+  return signinup;
+};

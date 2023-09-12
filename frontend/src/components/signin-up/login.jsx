@@ -31,7 +31,11 @@ const Login = () => {
     e.preventDefault();
   loginservice.userLogin(email,password).then(response=>{
     if(response){
+      alert("LOGIN SUCCESSFULL")
       navigate('/dashboard')
+    }
+    else{
+      alert("Invalid Credentials");
     }
   })
   }
