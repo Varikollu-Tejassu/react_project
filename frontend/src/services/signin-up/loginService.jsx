@@ -1,3 +1,13 @@
-// import axios from 'axios';
+import axios from "axios";
 
-// let baseUrl = process.env.REACT_APP_API_URL;
+let base_url = process.env.REACT_APP_API_URL;
+
+async function userLogin(email,password)
+{
+   let response = await axios.post(`${base_url}/api/signinUp/login`,{email:email,password:password});
+  console.log(response)
+
+   return response;
+}
+
+export default {userLogin};

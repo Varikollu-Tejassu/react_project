@@ -1,0 +1,403 @@
+.login-container{
+    display: flex;
+    flex-direction: row;
+  }
+  .login-image-container{
+    width:60%;
+  }
+  .login-image-container img{
+    width: 90%;
+    height:115%;
+  }
+  .login-form {
+    margin-top:5%;
+    /* margin-right:5%; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-color: transparent;
+    border: none;
+  }
+    
+  .login-image-container2{
+    width:149%;
+   
+   
+  }
+  .login-image-container2 img{
+    width: 90%;
+    height:100%;
+    
+  }
+  .login-form2 {
+    margin-top: -3%;
+    /* margin-right: 10%; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-color: transparent;
+    border: none;
+    height:max-content;
+    margin-left: -9%;
+    /* margin-right: 5%; */
+  }
+  
+  .input-field {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin: 10px 0; 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  
+  .login-form-container2
+  {
+    /* background-color: blue; */
+    width: 80%;
+    height: 40%;
+    margin-left: 18%;
+    margin-top: -13%;
+    /* margin-bottom: 100%; */
+  }
+  
+  .login-btn {
+    background-color: rgb(31, 2, 85);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 30%;
+    position: static;
+    width:40%;
+    font-size: 100%;
+  }
+  
+  .login-btn:hover {
+    background-color: #14017c;
+  }
+  
+  p
+  {
+    margin-left: 25%;
+  }
+  .my-image{
+    margin-top: -5%;
+    padding-left: 10%;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .auth-form {
+      width: 90%;
+      padding: 15px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  
+  .new
+  {
+    display: none;
+  }
+  
+  .my-image
+  {
+    margin-left: 8%;
+  }
+  
+  .login-form-container h2
+  {
+    color: rgb(35, 1, 63);
+  }
+
+
+
+
+  /* Sidebar CSS Start */
+
+.sidebar {
+  height: 100vh;
+  background: linear-gradient(#19105b, #472067, #7c3375, #ff6196);
+  width: 13.7vw;
+}
+
+.menu-button {
+  display: none;
+}
+
+.sidebar-content {
+  /* height: 100vh; */
+  padding-top: 1%;
+}
+
+.sidebar-menu-top {
+  list-style-type: none;
+  padding-left: 10%;
+  height: 75vh;
+}
+
+.sidebar-menu-top img {
+  width: 10%;
+  margin-bottom: 10%;
+}
+
+.sidebar-menu-top {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-family: Arial;
+  color: #f5f5f5;
+}
+
+.sidebar-menu-top li {
+  padding-bottom: 10%;
+  cursor: pointer;
+}
+
+.sidebar-logout {
+  width: 95%;
+  height: 28%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7em;
+  color: #f5f5f5;
+  font-weight: bolder;
+  margin-top: 75%;
+  padding: 7%;
+  border-top: 1px whitesmoke solid;
+  border-left: 30px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+/* login css ends */
+
+
+/* Calendar CSS start */
+
+.calendar-area {
+  width: 86.3vw;
+  /* padding-left: 13.7vw; */
+  margin-left: 13.7vw;
+  display: flex;
+  flex-direction: row;
+  /* overflow-y: hidden; */
+  background-color: #543fdc;
+}
+
+.dashboard-header{
+  text-align: start;
+  margin-top: -2.4%;
+  font-size: 24px;
+  font-family: Arial;
+  color: #19105B;
+  font-weight: 600;
+
+}
+
+.fc .fc-toolbar-title{
+  font-size: 1.2em;
+}
+
+.calendar-table {
+  /* display: none; */
+  text-align: center;
+  position: relative;
+  margin-top: -93vh;
+  width: 68vw;
+  margin-left: 1vw;
+}
+
+.calendar-dropdown-area {
+  position: relative;
+  margin: -93vh 0 0 1%;
+  width: 18.5%;
+  background-color: #f4f3f9;
+}
+
+.calendar-dropdownFilter {
+  background-color: #2C3E50;
+  height: 6.7%;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-dropdownFilter select {
+  width: 80%;
+  height: 1.3rem;
+  border-radius: 0.3rem;
+  outline: none;
+}
+
+.calendar-dropdown-details {
+  background-color: #c5bff4;
+  height: 40.5%;
+  margin-top: 12%;
+  border-radius: 0.3rem;
+  padding: 5%;
+}
+
+.calendar-dropdown-details-header{
+  margin-top: -5%;
+  position: relative;
+  width: 105%;
+  margin-left: -5%;
+  border-top-right-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+  padding: 2%;
+  text-align: center;
+  background-color: #14017c;
+  color: white;
+}
+
+.calendar-event-area {
+  background-color: #c5bff4;
+  height:60%;
+  border-radius: 0.3rem;
+  margin-top: 1%;
+  padding: 5%;
+}
+
+.calendar-event-area-header{
+  background-color: red;
+  margin-top: -5%;
+  position: relative;
+  width: 105%;
+  margin-left: -5%;
+  border-top-right-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+  padding: 2%;
+  text-align: center;
+  background-color: #14017c;
+  color: white;
+}
+
+/* Calendar CSS ends */
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 380px) {
+  /*Sidebar css starts*/
+  body{
+    overflow-y: scroll;
+  }
+  .sidebar {
+    height: 100vh;
+    width: 0%;
+    background: linear-gradient(#19105b, #472067, #7c3375, #ff6196);
+    overflow-x: hidden;
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .sidebar.active {
+    width: 190px; /* Adjust the width as needed */
+  }
+
+  .menu-button {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 8px;
+    z-index: 2;
+  }
+  .sidebar-close-btn {
+    padding-left: 10rem;
+    color: white;
+  }
+  /* Sidebar css ends */
+
+  /* Calendar css Starts */
+  .calendar-area {
+    width: 70vw;
+    height: 62vh;
+    background-color: white;
+    margin-left: 13.7vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 170%;
+  }
+
+  .fc-header-toolbar.fc-toolbar{
+    padding-top: 10%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .fc-toolbar-title{
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .fc-toolbar-chunk{
+    width: 68vw;
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+  }
+
+  .calendar-dropdown-area {
+    position: relative;
+    margin: 5vh 0 0 0;
+    width: 70vw;
+    background-color: #f4f3f9;
+  }
+
+  .calendar-dropdownFilter {
+    background-color: #19105b;
+    height: 6vh;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calendar-dropdownFilter select {
+    width: 80%;
+    height: 1.3rem;
+    border-radius: 0.3rem;
+    outline: none;
+  }
+
+  .calendar-dropdown-details {
+    background-color: #bab3f3;
+    height: max-content;
+    margin-top: 1%;
+    border-radius: 0.5rem;
+    padding: 5%;
+  }
+
+  .calendar-event-area {
+    background-color: #c5bff4;
+    height: max-content;
+    border-radius: 0.5rem;
+    margin-top: 1%;
+    padding: 5%;
+  }
+
+  .calendar-dropdown-details-header, .calendar-event-area-header{
+    margin-top: -5%;
+    position: relative;
+    width: 70vw;
+    margin-left: -6%;
+    border-top-right-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
+    padding: 2%;
+    text-align: center;
+    background-color: #14017c;
+    color: white;
+  }
+  /* Calendar css ends */
+}

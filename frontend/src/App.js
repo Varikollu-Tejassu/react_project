@@ -9,7 +9,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 /* Project components Imports - Start */
 
-import Login from './components/signin-up/Login';
+import Login from './components/signin-up/login';
 import Signup from './components/signin-up/Signup';
 import Calendar from "./components/calendar/Calendar"
 import Layout from './components/layout/Layout';
@@ -17,6 +17,9 @@ import Profile from "./components/profile/Profile";
 import ManageEvents from './components/manageEvents/ManageEvents';
 import ProjectAllocation from './components/projectAllocation/ProjectAllocation';
 // import Protected from './components/authenticate/Protected';
+	
+import { ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 /* Project components Imports -End */
 
@@ -44,7 +47,7 @@ function App() {
 
      </Routes>
      </BrowserRouter>
-
+     <ToastContainer/>
     </div>
   );
 

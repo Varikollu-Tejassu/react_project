@@ -6,9 +6,9 @@ var router = express.Router();
 
 
 
-router.use('/selectedEventsbyweek', selectedEventsbyweek)
+router.get(`/selectedEventsbyweek/:selected`, selectedEventsbyweek)
 
-router.use('/:selected', selectedEvents)
+router.get(`/:selected`, selectedEvents)
 
 router.use('/', create)
 
