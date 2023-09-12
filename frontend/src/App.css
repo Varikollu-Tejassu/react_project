@@ -198,10 +198,11 @@ p {
   width: 80%;
   height: 1.3rem;
   border-radius: 0.3rem;
+  outline: none;
 }
 
 .calendar-dropdown-details {
-  background-color: #c2bfd6;
+  background-color: #c5bff4;
   height: 40.5%;
   margin-top: 12%;
   border-radius: 0.3rem;
@@ -337,8 +338,8 @@ p {
   }
 
   .calendar-dropdown-details {
-    background-color: #543fdc;
-    height: 25vh;
+    background-color: #c5bff4;
+    height: max-content;
     margin-top: 1%;
     border-radius: 0.5rem;
     padding: 5%;
@@ -346,7 +347,7 @@ p {
 
   .calendar-event-area {
     background-color: #c5bff4;
-    height: 25vh;
+    height: max-content;
     border-radius: 0.5rem;
     margin-top: 1%;
     padding: 5%;
@@ -361,7 +362,7 @@ p {
     border-top-left-radius: 0.3rem;
     padding: 2%;
     text-align: center;
-    background-color: #14017c;
+    background-color: #19105b;
     color: white;
   }
   /* Calendar css ends */

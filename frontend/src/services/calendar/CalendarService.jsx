@@ -2,10 +2,15 @@ import axios from "axios";
 
 let base_url = process.env.REACT_APP_API_URL;
 
-async function selectedCategory(cred){
-    let response = await axios.post(`${base_url}/${cred}`);
+async function selectedCategory(selectedCategory){
+    let response = await axios.get(`${base_url}/api/calendar/${selectedCategory}`);
+    return response;
+}
+
+async function getWeeklyEvent(selectedCategory){
+    let response = await axios.get(`${base_url}/api/calendar/selectedEventsbyweek/${selectedCategory}`);
     return response;
 }
 
 
-export default {selectedCategory}
+export default {selectedCategory, getWeeklyEvent}

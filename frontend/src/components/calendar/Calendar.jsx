@@ -18,24 +18,43 @@ const Calendar = () => {
   const [eventdata, setEventdata] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isLoading, setIsLoading] = useState(true); // Add a loading state
+  const [eventByWeek, setEventByWeek] = useState([]);
+  const [eventDetails, setEventDetails] = useState(null);
 
-  // const getSelectedCategory = () => {
-  //   calServices
-  //     .selectedCategory(selectedCategory)
-  //     .then((response) => {
-  //       setEventdata(response.data);
-  //     })
-  //     .catch((error) => {
-  //       throw error;
-  //     })
-  //     .finally(() => {
-  //       setIsLoading(false);
-  //     });
-  // };
+  const handleEventClick = (info) => {
+    // Get event details from the clicked event
+    setEventDetails(info.event);
+  };
 
-  // useEffect(() => {
-  //   getSelectedCategory();
-  // }, [selectedCategory]);
+  const getSelectedCategory = () => {
+    calServices
+      .selectedCategory(selectedCategory)
+      .then((response) => {
+        setEventdata(response.data);
+      })
+      .catch((error) => {
+        throw error;
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  const getWeekEvent = () => {
+    calServices
+      .getWeeklyEvent(selectedCategory)
+      .then((response) => {
+        setEventByWeek(response.data);
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
+
+  useEffect(() => {
+    getSelectedCategory();
+    getWeekEvent();
+  }, [selectedCategory]);
 
   //  For DropDown
 
@@ -57,35 +76,31 @@ const Calendar = () => {
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             events={eventdata.map((item) => ({
               title: item.title,
-              allday:
-                item.starttime.split("T")[1].split(".")[0] ===
-                item.endtime.split("T")[1].split(".")[0]
-                  ? true
-                  : false,
-              start:
-                item.starttime.split("T")[1] === item.endtime.split("T")[1]
-                  ? item.startdate
-                  : item.startdate.concat(
-                      "T".concat(item.starttime.split("T")[1].split(".")[0])
-                    ),
+              allDay: item.is_allday,
+              start: item.start_date + "T" + item.start_time,
+              end: item.end_date + "T" + item.end_time,
+              extendedProps: {
+                description: item.other_details,
+              },
+
               // Festival:#2596be
               // Bithday: 'purple'
               // Meetings: #ca4f89
               // others: #242464
               // Holiday: red
               // start:item.startdate,
-              end: item.enddate,
               backgroundColor:
-                item.eventtype === "Birthday"
+                item.event_type === "Birthday"
                   ? "purple"
-                  : item.eventtype === "Meeting"
+                  : item.event_type === "Meeting"
                   ? "#ca4f89"
-                  : item.eventtype === "Holiday"
+                  : item.event_type === "Holiday"
                   ? "red"
-                  : item.eventtype === "Festival"
+                  : item.event_type === "Festival"
                   ? "#2596be"
                   : "#242464",
             }))}
+            eventClick={handleEventClick}
             initialView={"dayGridMonth"}
             headerToolbar={{
               start: "today prev,next", // will normally be on the left. if RTL, will be on the right
@@ -122,14 +137,67 @@ const Calendar = () => {
 
           <div className="calendar-dropdown-details">
             <p className="calendar-dropdown-details-header">Upcoming Events</p>
-            <div className="calendar-dropdown-eventdata">
-              dropdownFilter data
-            </div>
+            {eventByWeek.map((item, index) => (
+              <ul style={{ marginLeft: "-18px", position: "relative" }}>
+                <li style={{ fontWeight: "600", fontSize: "16px" }}>
+                  {item.title}
+                </li>
+              </ul>
+            ))}
+
+            <div className="calendar-dropdown-eventdata"></div>
           </div>
 
           <div className="calendar-event-area">
             <p className="calendar-event-area-header">Events Details</p>
-            <div className="calendar-event-selecteddata">selected data</div>
+            {eventDetails && (
+              <div
+                style={{
+                  marginLeft: "-30px",
+                  position: "relative",
+                  fontWeight: "600",
+                  fontSize: "16px",
+                }}
+              >
+                <p>Title: {eventDetails.title}</p>
+                {eventDetails.extendedProps.description != "" ? (
+                  <p>Desc : {eventDetails.extendedProps.description}</p>
+                ) : null}
+                <p>
+                  Start:{" "}
+                  {eventDetails.start
+                    ? eventDetails.start.toLocaleString("en-US", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "numeric",
+                        second: "numeric",
+                        timeZoneName: "short",
+                      })
+                    : "N/A"}
+                </p>
+
+                <p>
+                  End:{" "}
+                  {eventDetails.end
+                    ? eventDetails.end.toLocaleString("en-US", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "numeric",
+                        second: "numeric",
+                        timeZoneName: "short",
+                      })
+                    : "N/A"}
+                </p>
+
+                {/* Add more event details here */}
+              </div>
+            )}
           </div>
         </div>
       )}
