@@ -27,11 +27,16 @@ const create = async (req, res) => {
  
 
 const selectedEvents = async (req, res) => {
+<<<<<<< HEAD
 
   const { selected } = await req.params;
 
   if (selected === "All") {
 
+=======
+  const { selected } = req.params;
+  if (selected === "All") {
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
     try {
 
       const getselectedevents = await table.findAll();
@@ -77,11 +82,16 @@ const selectedEvents = async (req, res) => {
  
 
 const selectedEventsbyweek = async (req, res) => {
+<<<<<<< HEAD
 
   const { selected } = await req.params;
 
   if (selected === "All") {
 
+=======
+  const { selected } = req.params;
+  if (selected === "All") {
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
       try {
 
         const getselectedevents = await table.findAll({
@@ -107,6 +117,28 @@ const selectedEventsbyweek = async (req, res) => {
         console.log(error);
 
       }
+<<<<<<< HEAD
+=======
+    
+  }else{
+    try {
+      const getselectedevents = await table.findAll({
+        where: {
+         event_type : selected,
+         start_date: {
+          [Op.gte]: moment().toDate(),
+          [Op.lte]: moment().add(7, 'days').toDate()
+      },
+    },
+      });
+    res.send(getselectedevents);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};
+
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
 
    
 

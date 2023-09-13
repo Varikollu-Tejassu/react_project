@@ -5,14 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
 
   height: 70vh;
   overflow-y: hidden;
 
+=======
+height: 70vh;
+overflow-y: hidden;
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+*{
+  box-sizing: border-box;
 }

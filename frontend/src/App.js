@@ -16,10 +16,13 @@ import Layout from './components/layout/Layout';
 import Profile from "./components/profile/Profile";
 import ManageEvents from './components/manageEvents/ManageEvents';
 import ProjectAllocation from './components/projectAllocation/ProjectAllocation';
+<<<<<<< HEAD
 // import Protected from './components/authenticate/Protected';
 	
 import { ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+=======
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
 
 /* Project components Imports -End */
 
@@ -53,7 +56,6 @@ function App() {
 
   /* Render View Return - End */
 }
-
 
 /* Function - End */
 

@@ -70,7 +70,11 @@ const Sidebar = () => {
             <li>
               <Link
                 style={{ color: "white", textDecoration: "none" }}
+<<<<<<< HEAD
                 to="/dashboard/projectallocation"
+=======
+                to="/dashboard/resourceallocation"
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
               >
                 Project Allocation
               </Link>
@@ -79,9 +83,15 @@ const Sidebar = () => {
             <li>
               <Link
                 style={{ color: "white", textDecoration: "none" }}
+<<<<<<< HEAD
                 to="/dashboard/manageevents"
               >
                 Manage Event
+=======
+                to="/dashboard/addevent"
+              >
+                Add Event
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
               </Link>
             </li>
             {/* ) : null} */}
@@ -132,7 +142,11 @@ const Sidebar = () => {
 
   /* Render View Return - End */
 };
+<<<<<<< HEAD
 /* Render View Return - End */
+=======
+  /* Render View Return - End */
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
 
 /* Function - End */
 

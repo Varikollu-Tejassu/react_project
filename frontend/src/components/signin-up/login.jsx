@@ -1,5 +1,11 @@
-/* Import Section - Start */
+// Importing required components
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import loginservice from  "../../services/signin-up/loginService";
+import logo from "../../assets/images/login_bg.png";
+import image2 from "../../assets/images/image2.png";
 
+<<<<<<< HEAD
 /* React Imports - Start */
 
 import React, { useState } from 'react';
@@ -16,11 +22,22 @@ import {  toast } from 'react-toastify';
 
 
 /* Function - Start */
+=======
+// Creating login component
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+<<<<<<< HEAD
+=======
+  // Usesate hooks which initializs state value as an empty string
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
   function checkBreakpoint() {
     if (window.matchMedia('(max-width: 600px)').matches) {
       // console.log(document.getElementById('my-div').classList)
@@ -32,6 +49,7 @@ const Login = () => {
     document.getElementById('my-div').classList.add('login-image-container');
     }
   }
+<<<<<<< HEAD
   
   window.addEventListener('resize', checkBreakpoint);
 
@@ -83,17 +101,43 @@ const Login = () => {
 
   });
   }
+=======
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
   
-  /* Render View Return - Start */
+  window.addEventListener('resize', checkBreakpoint);
+
+  const loginhandle = async (e)=>{
+    e.preventDefault();
+  loginservice.userLogin(email,password).then(response=>{
+    if(response){
+      alert("LOGIN SUCCESSFULL")
+      navigate('/dashboard')
+    }
+    else{
+      alert("Invalid Credentials");
+    }
+  })
+  }
+ 
+  
+
 
   return (
     <div  className ="login-container" >
     <div className='login-image-container' id="my-div"> 
+<<<<<<< HEAD
         <img src={logo} alt='' />
     </div>
     <div className="login-form">
           <div> 
               <img src={image2} alt='' />
+=======
+        <img src={logo} />
+    </div>
+    <div className="login-form">
+          <div> 
+              <img src={image2} />
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
           </div>
       <form className='login-form-container' onSubmit={loginhandle}>
          <h2>Sign In</h2>
@@ -104,10 +148,11 @@ const Login = () => {
       </form>
     </div>
     </div>
+<<<<<<< HEAD
   )
+=======
+  );
+};
+>>>>>>> cf87b9b011aa94ddb5617a2d5d03d6fcc361b17e
 
-  /* Render View Return - End */
-}
-/* Function - End */
 export default Login;
-/* Export default functionName */
