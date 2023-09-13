@@ -1,0 +1,275 @@
+.modal {
+    /* display: none;  */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search button {
+    width: 3%;
+    height: 2.2rem;
+    background-color: #FF6196;
+    border: 0;
+    color: white;
+    border-radius: 2px;
+}
+
+.search input {
+
+    height: 1.9rem;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+/* For whole creat event form */
+.event-form-container {
+    background-color: white;
+    width: 38%;
+    margin-left: 30%;
+    padding: 10px 20px 10px 20px;
+    font-size: 11px;
+    color: rgb(75, 73, 73);
+    border-radius: 10px;
+    margin-top: 8%;
+    height: 53vh;
+    box-shadow: 0 24px 38px 3px rgba(226, 218, 218, 0.459), 0 9px 46px 8px rgba(35, 34, 36, 0.661), 0 11px 15px -7px rgba(196, 194, 199, 0.363);
+
+}
+
+/* For Heading */
+.event-form-container p {
+    color: #19105B;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 0%;
+    margin-top: 0%;
+}
+
+/* For event name */
+.form-name{
+    margin-right: 10%;
+}
+.form-name label {
+    display: block;
+    padding-top: 3px;
+    margin-bottom: 3px;
+    
+}
+
+/* For event name input */
+.form-name input {
+    width: 110%;
+    height: 1.8rem;
+    color: rgb(75, 73, 73);
+    outline: none;
+}
+
+/* for select event form */
+.form-type{
+    width: 50%;
+    margin-left: 3%;
+}
+
+.form-type select {
+    padding: 5px 5px 5px 5px;
+    margin-top: 1.5%;
+    height: 1.8rem;
+    width: 80%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    color: rgb(75, 73, 73);
+    outline: none;
+}
+
+/* For Description */
+.form-desc {
+    margin-bottom: 5px;
+    padding-top: 10px;
+   
+}
+
+/* .form-desc label{
+    margin-bottom: 1%;
+} */
+
+/* For Description text area */
+.form-des {
+    width: 100%;
+    height: 60px;
+    margin-top: 1%;
+    padding: 13px;
+    box-sizing: border-box;
+    color: rgb(75, 73, 73);
+    outline: none;
+}
+
+.form-button {
+    background-color: #FF6196;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 3%;
+    float: right;
+}
+
+
+.add-event-btn {
+    float: right;
+    margin-right: 3%;
+    margin-bottom: 2%;
+}
+
+.ad-ev-btn {
+    background-color: #FF6196;
+    padding: 10px 10px 10px 10px;
+    border: 0;
+    width: 120%;
+    height: 35px;
+    font-size: 16px;
+    color: white;
+    border-radius: 2px;
+}
+
+.events-table {
+    width: 99%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    font-size: 14px;
+    padding: 10px;
+    color: rgb(87, 86, 86);
+    /* border: 3px solid #83069f; */
+}
+
+.events-table th,
+.events-table td {
+    /* border: 1px solid #83069f; */
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.events-table th {
+    background-color: #f2f2f2;
+}
+
+.events-table th:first-child,
+.events-table td:first-child {
+    border-left: none;
+}
+
+.events-table th:last-child,
+.events-table td:last-child {
+    border-right: none;
+}
+
+.edit-btn {
+    align-items: center;
+    width: 2%;
+}
+
+.btnnn {
+    /* background-color: rgb(119, 7, 106); */
+    background-color: #FF6196;
+    color: white;
+    border: 0;
+    width: 110%;
+    height: 27px;
+    border-radius: 2px;
+}
+
+.dlte-btnnn {
+    width: 100%;
+    background-color: #FF6196;
+    color: white;
+    border: 0;
+    height: 27px;
+    border-radius: 2px;
+}
+
+.events-table th {
+    background-color: #19105B;
+    color: white;
+    height: 2rem;
+}
+
+.bord {
+    border-bottom: 2px dotted rgb(75, 5, 196);
+}
+
+/* .search{
+    width: 130%;
+  } */
+
+.manageEvent-page {
+    position: relative;
+    margin-left: 15%;
+    margin-top: -57%;
+}
+
+.manageEvent-page h1 {
+    padding-bottom: 1%;
+}
+
+.add-event-input-area {
+    border-top: dashed 1px black;
+    border-bottom: dashed 1px black;
+    font-size: 13px;
+    color: #6A6C71;
+    font-family: Arial;
+    font-weight: 100;
+    padding-top: 2%;
+}
+
+.add-event-name-data, .time, .dates {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.start-date, .end-date, .start-time, .end-time {
+    margin-left: 0%;
+    margin-right: 10%;
+    width: 50%;
+    
+}
+
+.start-time input, .end-time input, .start-date input, .end-date input {
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 2%;
+    height: 1.8rem;
+    color: rgb(87, 86, 86);
+    outline: none;
+    display: flex;
+    width: 100%;
+}

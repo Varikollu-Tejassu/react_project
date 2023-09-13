@@ -14,12 +14,11 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 import calServices from "../../services/calendar/CalendarService";
 
-import "./../../App.css"
+import "./../../App.css";
 
 /* React Imports -End */
 
 /* Import Section - End */
-
 
 /* Function - Start */
 
@@ -41,20 +40,26 @@ const Calendar = () => {
   };
 
   const getSelectedCategory = () => {
-    calServices.selectedCategory(selectedCategory).then((response) => {
+    calServices
+      .selectedCategory(selectedCategory)
+      .then((response) => {
         setEventdata(response.data);
-        console.log(response.data)
-      }).catch((error) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
         throw error;
-      }).finally(() => {
+      })
+      .finally(() => {
         setIsLoading(false);
       });
   };
 
   const getWeekEvent = () => {
-    calServices.getWeeklyEvent(selectedCategory).then((response) => {
+    calServices
+      .getWeeklyEvent(selectedCategory)
+      .then((response) => {
         setEventByWeek(response.data);
-        console.log(response.data)
+        console.log(response.data);
       })
 
       .catch((error) => {
@@ -66,7 +71,7 @@ const Calendar = () => {
     getSelectedCategory();
     getWeekEvent();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   //  For DropDown
@@ -193,7 +198,7 @@ const Calendar = () => {
             {eventDetails && (
               <div
                 style={{
-                  marginLeft: "-30px",
+                  marginLeft: "-50px",
 
                   position: "relative",
 

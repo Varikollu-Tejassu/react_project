@@ -11,7 +11,7 @@ var router = express.Router();
 
 router.get('/', verifyuser , create)
 
-router.use('/getevent',getevents)
+router.get('/getevent',getevents)
 
 router.post('/addevent', addevents)
 

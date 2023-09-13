@@ -242,32 +242,19 @@
   padding: 5%;
 }
 
-.calendar-dropdown-details-header{
-  margin-top: -5%;
-  position: relative;
-  width: 105%;
-  margin-left: -5%;
-  border-top-right-radius: 0.3rem;
-  border-top-left-radius: 0.3rem;
-  padding: 2%;
-  text-align: center;
-  background-color: #14017c;
-  color: white;
-}
-
 .calendar-event-area {
   background-color: #c5bff4;
-  height:60%;
+  height:40%;
   border-radius: 0.3rem;
   margin-top: 1%;
   padding: 5%;
 }
 
-.calendar-event-area-header{
+.calendar-event-area-header,.calendar-dropdown-details-header {
   background-color: red;
   margin-top: -5%;
   position: relative;
-  width: 105%;
+  width: 106%;
   margin-left: -5%;
   border-top-right-radius: 0.3rem;
   border-top-left-radius: 0.3rem;
