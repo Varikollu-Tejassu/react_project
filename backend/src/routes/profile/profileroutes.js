@@ -1,17 +1,18 @@
 const express = require('express')
-const {create, userdata,logindata} = require('../../controller/profile/profilecontroller')
+const {create, userdata,logindata} = require('../../controller/profile/profilecontroller');
+const { verifyuser } = require('../../middleware/authentication');
 
 var router = express.Router();
 
 
 
-router.use('/profiledata', userdata)
+router.get(`/profiledata/:email`, userdata)
 
-router.use('/logindata', logindata)
+router.get('/logindata/:email', logindata)
 
 // router.use('/:selected', selectedEvents)
 
-router.use('/', create);
+router.use('/',verifyuser, create);
 
 
 

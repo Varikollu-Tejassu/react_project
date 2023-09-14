@@ -11,7 +11,7 @@ var router = express.Router();
 
 router.get('/', verifyuser , create)
 
-router.use('/getproject',getprojectdetails)
+router.use('/getproject' ,getprojectdetails)
 
 
 

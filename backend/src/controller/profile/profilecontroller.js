@@ -7,20 +7,20 @@ const table2 = creating.signinUp;
 const { Op } = require("sequelize");
 
 const userdata = async (req, res) => {
-  const email = req.body.email;
+  const { email } = await req.params;
   try {
     const getdata1 = await table1.findOne({
       where: { email: email },
     });
 
-    res.send(getdata1);
+    res.json(getdata1);
   } catch (error) {
     console.log(error);
   }
 };
 
 const logindata = async (req, res) => {
-  const email = req.body.email;
+  const { email } = await req.params;
   try {
     const getdata2 = await table2.findOne({
       where: { email: email },

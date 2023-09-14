@@ -62,9 +62,9 @@ const Signup = () => {
           
                   }
           
-                  else if (res.status === 409) {
+                  else if (res.status === 200) {
           
-                    toast.warning("Email is already existed..",{
+                    toast.warning(res.data,{
                       position: "top-right",
                       autoClose: 1000,
                       hideProgressBar: false,

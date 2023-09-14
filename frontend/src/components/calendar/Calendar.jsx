@@ -40,10 +40,10 @@ const Calendar = () => {
     setEventDetails(info.event);
   };
 
-  const getSelectedCategory = () => {
-    calServices.selectedCategory(selectedCategory).then((response) => {
+  const getSelectedCategory = async () => {
+    await calServices.selectedCategory(selectedCategory).then((response) => {
         setEventdata(response.data);
-        console.log(response.data)
+        console.log("jjjjjjjj",response.data)
       }).catch((error) => {
         throw error;
       }).finally(() => {
@@ -51,8 +51,8 @@ const Calendar = () => {
       });
   };
 
-  const getWeekEvent = () => {
-    calServices.getWeeklyEvent(selectedCategory).then((response) => {
+  const getWeekEvent = async () => {
+    await calServices.getWeeklyEvent(selectedCategory).then((response) => {
         setEventByWeek(response.data);
         console.log(response.data)
       })
@@ -204,7 +204,7 @@ const Calendar = () => {
               >
                 <p>Title: {eventDetails.title}</p>
 
-                {eventDetails.extendedProps.description != "" ? (
+                {eventDetails.extendedProps.description !== "" ? (
                   <p>Desc : {eventDetails.extendedProps.description}</p>
                 ) : null}
 

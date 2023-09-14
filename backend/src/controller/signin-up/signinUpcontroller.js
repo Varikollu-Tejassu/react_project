@@ -20,8 +20,8 @@ const login = async (req, res, next) => {
       const token = jwt.sign({ email }, process.env.JWT_SECRET_KEY, {
         expiresIn: "1d",
       });
-      res.cookie("token", token);
-      console.log(token);
+      // document.cookie =`token=${response.data.token}`;
+      console.log(" in ",token)
       res.status(200).json({ token: token });
     } else {
       res.status(400).json({ Error: "Password Incorrect" });
@@ -49,7 +49,7 @@ const register = async (req, res, next) => {
     res.status(201).json(created_user);
   } else {
 
-    res.status(409).send('User already exists');
+    res.status(200).send('User already exists');
 
   }
 

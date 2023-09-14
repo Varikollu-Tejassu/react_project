@@ -40,7 +40,10 @@ const Login = () => {
   SigninService.userLogin(email,password).then(response=>{
     if(response.statusText==="OK"){
       console.log(response.data.token)
-      document.cookie = response.data.token;
+      var date = new Date();
+      var minutes = 1.5;
+      date.setTime(date.getTime() + (minutes * 60 * 1000));
+      document.cookie =`token=${response.data.token};expires=${date}`;
       toast.success('Login success', {
         position: "top-right",
         autoClose: 1000,
